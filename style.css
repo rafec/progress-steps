@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eeeeee;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    width: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkpoint{
+    background-color: rgb(255, 255, 255);
+    color: #929292;
+    border-radius: 50%;
+    border: solid rgb(40, 129, 212);
+    width: 30px;
+    height: 30px;
+}
