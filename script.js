@@ -1,4 +1,4 @@
-const checkpointContainer = document.getElementById("checkpointContainer");
+const progress = document.getElementById("progress");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
 const checkpoints = document.querySelectorAll(".checkpoint")
@@ -34,7 +34,9 @@ function update() {
         }
     })
 
-    const actives = document.querySelectorAll(".active");
+    const actives = document.querySelectorAll('.active');
+
+    progress.style.width = (actives.length - 1) / (checkpoints.length - 1) * 100 + '%';
 
     if(currentActive === 1){
         prev.disabled = true;

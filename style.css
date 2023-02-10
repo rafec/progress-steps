@@ -22,6 +22,15 @@ body{
     justify-content: space-between;
 }
 
+#progress{
+    position: absolute;
+    background-color: #2881d4;
+    z-index: -1;
+    height: 4px;
+    width: 0%;
+    transition: 0.4s;
+}
+
 .checkpoint{
     background-color: #ffffff;
     color: #929292;
@@ -32,19 +41,33 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.4s;
 }
 
 .active{
     border: solid #2881d4
 }
 
-button{
+.btn-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+
+.btn{
     border-radius: 6px;
     background-color: #2881d4;
     color: #ffffff;
     border: none;
+    margin: 10px;
     padding: 5px;
     width: 90px;
     height: 35px;
     cursor: pointer;
+}
+
+.btn:disabled{
+    background-color: #929292;
+    cursor: not-allowed;
 }
