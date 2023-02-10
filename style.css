@@ -16,7 +16,7 @@ body{
     width: 350px;
 }
 
-.checkpoint-container{
+#checkpointContainer{
     display: flex;
     align-items: center;
     justify-content: space-between;
