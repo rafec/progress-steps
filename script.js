@@ -7,8 +7,8 @@ let currentActive = 1;
 
 next.addEventListener("click", () => {
     currentActive++;
-    
-    if(currentActive > checkpoints.length){
+
+    if (currentActive > checkpoints.length) {
         currentActive = checkpoints.length;
     }
 
@@ -18,8 +18,8 @@ next.addEventListener("click", () => {
 prev.addEventListener("click", () => {
     currentActive--;
 
-    if(currentActive < checkpoints.length){
-        currentActive = checkpoints.length;
+    if (currentActive < 1) {
+        currentActive = 1;
     }
 
     update();
@@ -27,9 +27,9 @@ prev.addEventListener("click", () => {
 
 function update() {
     checkpoints.forEach((checkpoint, idx) => {
-        if(idx < currentActive){
+        if (idx < currentActive) {
             checkpoint.classList.add("active");
-        }else{
+        } else {
             checkpoint.classList.remove("active");
         }
     })
@@ -38,11 +38,11 @@ function update() {
 
     progress.style.width = (actives.length - 1) / (checkpoints.length - 1) * 100 + '%';
 
-    if(currentActive === 1){
+    if (currentActive === 1) {
         prev.disabled = true;
-    }else if(currentActive === 4){
+    } else if (currentActive === checkpoints.length) {
         next.disabled = true;
-    }else{
+    } else {
         prev.disabled = false;
         next.disabled = false;
     }

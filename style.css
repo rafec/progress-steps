@@ -1,37 +1,61 @@
-*{
+:root {
+    --line-border-fill: #3498db;
+    --line-border-empty: #929292;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #eeeeee;
     display: flex;
     height: 100vh;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
-.container{
-    width: 350px;
+.container {
+    text-align: center;
 }
 
-#checkpointContainer{
+.checkpoint-container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    max-width: 100%;
+    width: 350px;
+    position: relative;
+    margin-bottom: 30px;
 }
 
-#progress{
+.checkpoint-container::before {
+    content: '';
+    background-color: var(--line-border-empty);
     position: absolute;
-    background-color: #2881d4;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+}
+
+.progress {
+    position: absolute;
     z-index: -1;
     height: 4px;
     width: 0%;
     transition: 0.4s;
+    background-color: var(--line-border-fill);
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
 }
 
-.checkpoint{
+.checkpoint {
     background-color: #ffffff;
     color: #929292;
     border-radius: 50%;
@@ -44,30 +68,27 @@ body{
     transition: 0.4s;
 }
 
-.active{
+.checkpoint.active {
     border: solid #2881d4
 }
 
-.btn-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-}
-
-.btn{
+.btn {
     border-radius: 6px;
     background-color: #2881d4;
     color: #ffffff;
     border: none;
-    margin: 10px;
-    padding: 5px;
+    margin: 5px;
+    padding: 8px 30px;
     width: 90px;
     height: 35px;
     cursor: pointer;
 }
 
-.btn:disabled{
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn:disabled {
     background-color: #929292;
     cursor: not-allowed;
 }
